@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FileManager {
@@ -17,9 +18,25 @@ public class FileManager {
         }
     }
 
-    public void saveToFile(List<String[]> data) {
+    public void saveToFile(List<String[]> newData) {
+        List<String[]> existingData = loadFromFile();
+
+        //Had to add to make sure data was unique, could probably use other data types but ran out of time (Edit: Broke it)
+        for (String[] newRow : newData) {
+            boolean exists = false;
+            for (String[] existingRow : existingData) {
+                if (Arrays.equals(newRow, existingRow)) {
+                    exists = true;
+                    break;
+                }
+            }
+            if (!exists) {
+                existingData.add(newRow);
+            }
+        }
+
         try (PrintWriter writer = new PrintWriter(new File(filePath))) {
-            for (String[] row : data) {
+            for (String[] row : existingData) {
                 writer.println(String.join(",", row));
             }
         } catch (FileNotFoundException e) {

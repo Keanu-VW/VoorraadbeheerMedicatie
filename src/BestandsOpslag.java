@@ -6,7 +6,7 @@ import java.util.List;
 class BestandsOpslag {
     private static final String BESTANDSNAAM = "medicatie_gegevens.txt";
 
-    // Methode erferfer gbgbgbg om medicatiegegevens op te slaan naar een bestand
+    // Methode erfejrfer gbgbgbg om medicatiegegevens op te slaan naar een bestand
     public static void opslaanNaarBestand(List<Medicijn> medicijnen) {
         Path filePath = Paths.get(BESTANDSNAAM);
         // De Path-klasse in Java wordt gebruikt om bestandssystemen-gerelateerde operaties uit te voeren.

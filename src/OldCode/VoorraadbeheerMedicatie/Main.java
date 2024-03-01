@@ -1,4 +1,4 @@
-package VoorraadbeheerMedicatie;
+package OldCode.VoorraadbeheerMedicatie;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

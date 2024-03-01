@@ -1,4 +1,4 @@
-package VoorraadbeheerMedicatie;
+package OldCode.VoorraadbeheerMedicatie;
 
 import java.io.*;
 import java.util.ArrayList;

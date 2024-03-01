@@ -1,5 +1,3 @@
-import java.io.Serializable;
-
 // Klasse die een medicijn vertegenwoordigt
 class Medicijn   {
 

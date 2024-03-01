@@ -1,4 +1,4 @@
-package VoorraadbeheerMedicatie;
+package OldCode.VoorraadbeheerMedicatie;
 
 public class User {
     private String name;

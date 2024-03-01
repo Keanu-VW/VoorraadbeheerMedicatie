@@ -1,3 +1,5 @@
+package VoorraadBeheer;
+
 // Klasse die een medicijn vertegenwoordigt
 class Medicijn   {
 

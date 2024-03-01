@@ -1,10 +1,32 @@
+package VoorraadBeheer;
+
+import javafx.application.Application;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
-public class Main {
+
+
+
+public class Main extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        Label lblHello = new Label("Hello World!");
+        BorderPane root = new BorderPane(lblHello);
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
     public static void main(String [] args) {
+        Application.launch(args);
         Scanner scanner = new Scanner(System.in);
         System.out.print("Gebruikersnaam; ");
         String gebruikersnaam = scanner.nextLine();
@@ -127,4 +149,9 @@ public class Main {
         scanner.close();
 
     }
+
+
+
+
+
 }

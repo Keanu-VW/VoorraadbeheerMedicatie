@@ -1,10 +1,12 @@
+package VoorraadBeheer;
+
 import java.io.*;
 import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 
 class BestandsOpslag {
-    private static final String BESTANDSNAAM = "medicatie_gegevens.txt";
+    private static final String BESTANDSNAAM = "VoorraadBeheer/medicatie_gegevens.txt";
 
     // Methode erfejrfer gbgbgbg om medicatiegegevens op te slaan naar een bestand
     public static void opslaanNaarBestand(List<Medicijn> medicijnen) {

@@ -1,3 +1,5 @@
+package VoorraadbeheerMedicatie;
+
 public enum Category {
     PIJN,
     KOORTS,

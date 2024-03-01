@@ -1,3 +1,5 @@
+package VoorraadbeheerMedicatie;
+
 import java.time.LocalTime;
 
 public class Medication {

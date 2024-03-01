@@ -1,3 +1,5 @@
+package VoorraadbeheerMedicatie;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,11 +35,11 @@ public class Login {
     public User login(String name, String password) {
         for (User user : userList) {
             if (user.getName().equals(name) && user.getPassword().equals(password)) {
-                System.out.println("Login successful");
+                System.out.println("VoorraadbeheerMedicatie.Login successful");
                 return user;
             }
         }
-        System.out.println("Login error");
+        System.out.println("VoorraadbeheerMedicatie.Login error");
         return null;
     }
 

@@ -1,33 +1,104 @@
 package VoorraadBeheer;
 
 import javafx.application.Application;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
-import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
-
-
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        Label lblHello = new Label("Hello World!");
-        BorderPane root = new BorderPane(lblHello);
-        Scene scene = new Scene(root);
+
+
+
+        StackPane root = new StackPane();
+        Scene scene = new Scene(root, 400, 500);
+
+        BorderPane root1 = new BorderPane();
+        Text loginText = new Text("Login");
+        loginText.setFont(Font.font("Verdana", 30));
+        loginText.setFill(Color.LIGHTSALMON);
+        root1.setTop(loginText);
+
+        Line line = new Line(0, 0, scene.getWidth(), 0);
+        line.setStrokeWidth(2);
+        root.getChildren().add(line);
+
+        // Bind de eindpositie van de lijn aan de breedte van de scene
+        line.endXProperty().bind(scene.widthProperty());
+        HBox loginBox = new HBox(loginText, line);
+        loginBox.setAlignment(Pos.CENTER_LEFT); // Om de inhoud in het midden links te plaatsen
+
+        root1.setTop(loginBox);
+        root.getChildren().add(root1); // Voeg root1 toe aan de StackPane
+
+
+        // Voeg de achtergrondafbeelding toe aan de StackPane
+        Image backgroundImage = new Image("achtergrond foto.png");
+        ImageView backgroundImageView = new ImageView(backgroundImage);
+        root.getChildren().add(backgroundImageView);
+
+        // Creëer een GridPane voor het gebruikersnaam- en wachtwoordveld
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(25, 25, 25, 25));
+
+        // Voeg een tekstveld toe voor gebruikersnaam
+        TextField userNameField = new TextField();
+        userNameField.setPromptText("Gebruikersnaam");
+        grid.add(userNameField, 0, 0);
+
+        // Voeg een tekstveld toe voor wachtwoord
+        PasswordField passwordField = new PasswordField();
+        passwordField.setPromptText("Wachtwoord");
+        grid.add(passwordField, 0, 1);
+
+        // Maak knoppen voor inloggen en nieuwe gebruiker registreren
+        Button loginButton = new Button("Inloggen");
+        Button registerButton = new Button("Nieuwe gebruiker");
+
+        // Voeg de knoppen toe aan de GridPane
+        grid.add(loginButton, 0, 2);
+        grid.add(registerButton, 1, 2);
+
+        // Voeg de GridPane toe aan de StackPane
+        root.getChildren().add(grid);
+
+        // Stel de titel van het venster in en toon het
+        primaryStage.setTitle("Medicatie beheer");
+
+        // Icon toevoegen
+        Image icon = new Image("th.jpg");
+        primaryStage.getIcons().add(icon);
+
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-    public static void main(String [] args) {
-        Application.launch(args);
-        Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+
+
+       /* Scanner scanner = new Scanner(System.in);
         System.out.print("Gebruikersnaam; ");
         String gebruikersnaam = scanner.nextLine();
 
@@ -148,10 +219,7 @@ public class Main extends Application {
         // Sluit de scanner
         scanner.close();
 
-    }
+
+*/
 
 
-
-
-
-}

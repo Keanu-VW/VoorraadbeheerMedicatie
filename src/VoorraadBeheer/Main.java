@@ -35,7 +35,7 @@ public class Main extends Application {
         loginText.setFill(Color.LIGHTSALMON);
         root1.setTop(loginText);
 
-        Line line = new Line(0, 0, scene.getWidth(), 0);
+        Line line = new Line(150, 0, scene.getWidth(), 0);
         line.setStrokeWidth(2);
         root.getChildren().add(line);
 

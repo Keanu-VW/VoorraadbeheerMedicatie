@@ -3,9 +3,7 @@ package VoorraadBeheer.LoginView;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -21,16 +19,21 @@ public class LoginView extends GridPane {
     private TextField userNameField = new TextField();
     private PasswordField passwordField = new PasswordField();
     private Button loginButton = new Button("Inloggen");
-    private Button registerButton = new Button("Nieuwe gebruiker");
+    private static Button registerButton = new Button("Nieuwe gebruiker");
     public static Image icon = new Image("th.jpg"); //om het te kunnen
     //gebruiken zonder OP
 
     // voor de achter grond foto en om daarboven te kunnen schrijven ...
-    private static StackPane root = new StackPane();
+    public static StackPane root = new StackPane();
 
     private BorderPane root1 = new BorderPane();
 
      public static Scene scene = new Scene(root, 400, 500);
+
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+
+
 
 
     public LoginView (){
@@ -65,6 +68,12 @@ public class LoginView extends GridPane {
         // Voeg de GridPane toe aan de StackPane
         root.getChildren().add(this);
 
+        // Stel de titel en de inhoud van de alert in
+        alert.setTitle("Nieuwe gebruiker");
+        //Door null in te stellen, verwijder je de standaard kopregel die bij bepaalde Alert-typen wordt weergegeven.
+        alert.setHeaderText(null);
+        //                                                                   die werkt momenteel niet.
+        alert.setContentText("Je verzoek is ingediend voor gebruiker: " + getUserNameField().getText());
 
     }
 
@@ -84,7 +93,11 @@ public class LoginView extends GridPane {
         return loginButton;
     }
 
-    public Button getRegisterButton() {
+    public  Button getRegisterButton() {
         return registerButton;
+    }
+
+    public Alert getAlert() {
+        return alert;
     }
 }

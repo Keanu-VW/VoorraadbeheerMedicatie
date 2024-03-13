@@ -1,6 +1,6 @@
-package VoorraadBeheer.LoginView;
+package VoorraadBeheer.View.LoginView;
 
-import VoorraadBeheer.MedicationListView.MedicationListView;
+import VoorraadBeheer.View.MedicationListView.MedicationListView;
 
 import javafx.scene.control.Alert;
 

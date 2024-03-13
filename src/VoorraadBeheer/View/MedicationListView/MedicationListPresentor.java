@@ -1,4 +1,4 @@
-package VoorraadBeheer.MedicationListView;
+package VoorraadBeheer.View.MedicationListView;
 
 
 public class MedicationListPresentor {

@@ -1,4 +1,4 @@
-package VoorraadBeheer.LoginView;
+package VoorraadBeheer.View.LoginView;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

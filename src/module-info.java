@@ -3,4 +3,5 @@ module VoorraadBeheer{
     requires java.desktop;
 
     exports VoorraadBeheer;
+
 }

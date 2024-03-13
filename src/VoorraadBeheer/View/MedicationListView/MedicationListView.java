@@ -1,4 +1,4 @@
-package VoorraadBeheer.MedicationListView;
+package VoorraadBeheer.View.MedicationListView;
 
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;

@@ -1,4 +1,4 @@
-package VoorraadBeheer.NewMedicationView;
+package VoorraadBeheer.View.NewMedicationView;
 
 public class NewMedicationView {
 

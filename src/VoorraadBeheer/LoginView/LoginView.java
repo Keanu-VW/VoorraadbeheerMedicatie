@@ -51,6 +51,8 @@ public class LoginView extends GridPane {
         root1.setTop(loginText);
         root.getChildren().add(root1);
         root.getChildren().add(backgroundImageView);
+
+        //this, root1 borderPane
         this.setAlignment(Pos.TOP_LEFT);
         //Gebruik Hgap en Vgap om de
         //ruimte tussen de cellen in te stellen

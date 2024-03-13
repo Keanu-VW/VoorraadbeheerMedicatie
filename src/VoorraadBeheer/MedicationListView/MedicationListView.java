@@ -5,7 +5,7 @@ import javafx.scene.layout.BorderPane;
 
 public class MedicationListView extends BorderPane{
     private static BorderPane medicationListViewRoot = new BorderPane();
-    public static Scene scene;
+    public static Scene scene=new Scene(medicationListViewRoot, 400, 500);
 
 
     public MedicationListView(){
@@ -16,7 +16,7 @@ public class MedicationListView extends BorderPane{
 
     }
     private void layoutNodes(){
-         scene = new Scene(medicationListViewRoot, 400, 500);
+         this.scene = scene;
 
 
 

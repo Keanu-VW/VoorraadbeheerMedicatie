@@ -1,11 +1,9 @@
 package VoorraadBeheer.LoginView;
 
-import VoorraadBeheer.MedicationListView.MedicationListPresentor;
 import VoorraadBeheer.MedicationListView.MedicationListView;
 
 import javafx.scene.control.Alert;
 
-import static VoorraadBeheer.LoginView.LoginView.root;
 
 
 public class LoginPresentor {
@@ -36,7 +34,6 @@ public class LoginPresentor {
 
                MedicationListView medicationListView = new MedicationListView();
                // Wijzig de huidige scene naar de scene van de volgende pagina
-               root.getScene().setRoot(medicationListView.getMedicationListViewRoot());
            }
 
 
@@ -52,6 +49,6 @@ public class LoginPresentor {
     }
 
     private void updateView() {
-
+        //date van de model
     }
 }

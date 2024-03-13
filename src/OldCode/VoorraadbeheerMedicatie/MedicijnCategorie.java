@@ -1,4 +1,4 @@
-package VoorraadBeheer;
+package OldCode.VoorraadbeheerMedicatie;
 
 enum MedicijnCategorie {
     PIJN,

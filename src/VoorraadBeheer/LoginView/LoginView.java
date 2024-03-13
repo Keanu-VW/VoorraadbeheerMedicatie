@@ -14,7 +14,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class LoginView extends GridPane {
-   private Text loginText = new Text("  Login  ");
+    private Text loginText = new Text("  Login  ");
     private ImageView backgroundImageView = new ImageView("achtergrond foto.png");
     private TextField userNameField = new TextField();
     private PasswordField passwordField = new PasswordField();

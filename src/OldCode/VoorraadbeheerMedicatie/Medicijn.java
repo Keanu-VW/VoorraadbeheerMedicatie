@@ -1,4 +1,4 @@
-package VoorraadBeheer;
+package OldCode.VoorraadbeheerMedicatie;
 
 // Klasse die een medicijn vertegenwoordigt
 class Medicijn   {

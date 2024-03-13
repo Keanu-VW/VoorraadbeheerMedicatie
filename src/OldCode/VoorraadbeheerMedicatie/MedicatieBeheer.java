@@ -1,4 +1,4 @@
-package VoorraadBeheer;
+package OldCode.VoorraadbeheerMedicatie;
 
 import java.util.List;
 import java.util.stream.Collectors;

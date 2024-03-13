@@ -1,29 +1,33 @@
 package VoorraadBeheer.MedicationListView;
 
-import javafx.scene.Scene;
+import VoorraadBeheer.Model.Medication;
+import javafx.scene.control.TableColumn;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.control.TableView;
+
+import java.time.LocalTime;
 
 public class MedicationListView extends BorderPane{
-    private static BorderPane medicationListViewRoot = new BorderPane();
-    public static Scene scene;
+    private TableView<Medication> tableView = new TableView<>();
+
+    private TableColumn<Medication, String> nameColumn = new TableColumn<>("Name");
+    private TableColumn<Medication, String> descriptionColumn = new TableColumn<>("Description");
+    private TableColumn<Medication, Integer> stockColumn = new TableColumn<>("Stock");
+    private TableColumn<Medication, LocalTime> timeToTakeColumn = new TableColumn<>("Time to take");
 
 
     public MedicationListView(){
         initialiseNodes();
         layoutNodes();
     }
+
     private void initialiseNodes(){
 
     }
+
     private void layoutNodes(){
-         scene = new Scene(medicationListViewRoot, 400, 500);
-
-
-
-
-    }
-    public BorderPane getMedicationListViewRoot() {
-        return medicationListViewRoot;
+        this.getChildren().add(tableView);
+        tableView.getColumns().addAll(nameColumn, descriptionColumn, stockColumn, timeToTakeColumn);
     }
 
 

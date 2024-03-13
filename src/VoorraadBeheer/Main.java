@@ -15,10 +15,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-        LoginView view = new LoginView();
-        new LoginPresentor(view);
-        MedicationListView view1 = new MedicationListView();
-        new MedicationListPresentor(view1);
+        LoginView loginView = new LoginView();
+        new LoginPresentor(loginView);
+        MedicationListView medicationListView = new MedicationListView();
+        new MedicationListPresentor(medicationListView);
 
 
         // Stel de titel van het venster in en toon het

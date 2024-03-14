@@ -4,6 +4,7 @@ import VoorraadBeheer.Model.Medication;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBase;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
@@ -16,7 +17,7 @@ import java.time.LocalTime;
 
 public class MedicationListView extends BorderPane{
     /*
-    Root
+    Root VBox
         Hbox
             Text
             Text
@@ -83,5 +84,13 @@ public class MedicationListView extends BorderPane{
 
         // Add the root VBox to the MedicationListView
         this.setCenter(root);
+    }
+
+    public Button getNewMedicationButton() {
+        return newMedicationButton;
+    }
+
+    public Text getTitle() {
+        return title;
     }
 }

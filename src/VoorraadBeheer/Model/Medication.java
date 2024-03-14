@@ -15,5 +15,19 @@ public class Medication {
         this.timeToTake = timeToTake;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public LocalTime getTimeToTake() {
+        return timeToTake;
+    }
 }

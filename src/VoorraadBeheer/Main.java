@@ -18,8 +18,6 @@ public class Main extends Application {
         LoginView view = new LoginView();
         new LoginPresentor(view);
         MedicationListView view1 = new MedicationListView();
-        new MedicationListPresentor(view1);
-
 
         // Stel de titel van het venster in en toon het
         primaryStage.setTitle("Medicatie beheer");

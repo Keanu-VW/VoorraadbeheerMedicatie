@@ -1,6 +1,6 @@
 package VoorraadBeheer.View.NewMedicationView;
 
-import VoorraadBeheer.View.MedicationListView.MedicationListView;
+import VoorraadBeheer.MedicationListView.MedicationListView;
 
 public class NewMedicationPresentor {
 

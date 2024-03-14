@@ -93,4 +93,8 @@ public class MedicationListView extends BorderPane{
     public Text getTitle() {
         return title;
     }
+
+    public TableView getTableView() {
+        return tableView;
+    }
 }

@@ -23,7 +23,7 @@ public class MedicationListPresentor {
         this.medicationListView.getNewMedicationButton().setOnAction(e -> {
             // Create a new NewMedicationView and presenter
             NewMedicationView newMedicationView = new NewMedicationView();
-            new NewMedicationPresentor(newMedicationView);
+            new NewMedicationPresentor(newMedicationView, medicationListView.getTableView());
 
             // Create a new stage and scene for the medicationListView
             Stage newMedicationStage = new Stage();

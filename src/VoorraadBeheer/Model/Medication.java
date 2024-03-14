@@ -6,9 +6,9 @@ public class Medication {
     private String name;
     private String description;
     private int stock;
-    private LocalTime timeToTake;
+    private String timeToTake;
 
-    public Medication(String name, String description, int stock, LocalTime timeToTake) {
+    public Medication(String name, String description, int stock, String timeToTake) {
         this.name = name;
         this.description = description;
         this.stock = stock;
@@ -27,7 +27,7 @@ public class Medication {
         return stock;
     }
 
-    public LocalTime getTimeToTake() {
+    public String getTimeToTake() {
         return timeToTake;
     }
 }

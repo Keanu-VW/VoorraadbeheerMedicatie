@@ -19,10 +19,6 @@ public class MedicationListPresentor {
         this.addEventHandlers();
         this.updateView();
     }
-
-    public MedicationListPresentor(VoorraadBeheer.MedicationListView.MedicationListView medicationListView) {
-    }
-
     private void addEventHandlers() {
         this.medicationListView.getNewMedicationButton().setOnAction(e -> {
             // Create a new NewMedicationView and presenter

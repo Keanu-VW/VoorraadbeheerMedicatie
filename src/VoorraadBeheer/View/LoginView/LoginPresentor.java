@@ -53,7 +53,7 @@ public class LoginPresentor {
             }
         });
     }
- public void addWindowEventHandlers() {
+   /* public void addWindowEventHandlers() {
         view.getScene().getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent event) {
@@ -71,8 +71,7 @@ public class LoginPresentor {
                 }
             }
         });
-    }
-
+    }*/
 
 
 

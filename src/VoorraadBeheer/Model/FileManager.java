@@ -16,7 +16,6 @@ public class FileManager {
     public FileManager(String filePath) {
         this.filePath = filePath;
         File file = new File(filePath);
-        System.out.println("File path: " + file.getAbsolutePath());
 
         // If the file does not exist, create a new file
         if (!file.exists()) {
@@ -30,15 +29,7 @@ public class FileManager {
 
     public void saveToFile(TableView<Medication> table) {
         ObservableList<Medication> data = table.getItems();
-        for (Medication medication : data) {
-            try {
-                FileWriter writer = new FileWriter(filePath, true);
-                writer.write(medication.getName() + "," + medication.getDescription() + "," + medication.getStock() + "," + medication.getTimeToTake() + "\n");
-                writer.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+
     }
 
     public TableView<Medication> loadFromFile() {

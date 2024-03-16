@@ -1,23 +1,25 @@
 package VoorraadBeheer;
 
-import VoorraadBeheer.LoginView.LoginPresentor;
-import VoorraadBeheer.LoginView.LoginView;
-import VoorraadBeheer.MedicationListView.MedicationListPresentor;
-import VoorraadBeheer.MedicationListView.MedicationListView;
+import VoorraadBeheer.View.LoginView.LoginPresentor;
+import VoorraadBeheer.View.LoginView.LoginView;
+import VoorraadBeheer.View.MedicationListView.MedicationListPresentor;
+import VoorraadBeheer.View.MedicationListView.MedicationListView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-import static VoorraadBeheer.LoginView.LoginView.icon;
-import static VoorraadBeheer.LoginView.LoginView.scene;
+import static VoorraadBeheer.View.LoginView.LoginView.icon;
+import static VoorraadBeheer.View.LoginView.LoginView.scene;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
 
-        LoginView view = new LoginView();
-        new LoginPresentor(view);
-        MedicationListView view1 = new MedicationListView();
+        LoginView loginView = new LoginView();
+        LoginPresentor loginPresentor=new LoginPresentor(loginView);
+        MedicationListView medicationListView = new MedicationListView();
+        new MedicationListPresentor(medicationListView);
+
 
         // Stel de titel van het venster in en toon het
         primaryStage.setTitle("Medicatie beheer");
@@ -25,8 +27,6 @@ public class Main extends Application {
         // Icon toevoegen
 
         primaryStage.getIcons().add(icon);
-
-
         primaryStage.setScene(scene);
 
 

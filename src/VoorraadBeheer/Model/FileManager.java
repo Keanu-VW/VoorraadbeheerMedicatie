@@ -17,7 +17,7 @@ public class FileManager {
         this.filePath = filePath;
         File file = new File(filePath);
 
-        // If the file does not exist, create a new file
+        // If the file does not xist, create a new file
         if (!file.exists()) {
             try {
                 file.createNewFile();

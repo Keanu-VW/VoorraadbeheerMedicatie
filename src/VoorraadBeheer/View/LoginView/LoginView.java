@@ -19,8 +19,8 @@ public class LoginView extends GridPane {
     private TextField userNameField = new TextField();
     private PasswordField passwordField = new PasswordField();
     private Button loginButton = new Button("Inloggen");
-    private static Button registerButton = new Button("Nieuwe gebruiker");
-    public static Image icon = new Image("th.jpg"); //om het te kunnen
+    private Button registerButton = new Button("Nieuwe gebruiker");
+    private Image icon = new Image("th.jpg"); //om het te kunnen
     //gebruiken zonder OP
 
     // voor de achter grond foto en om daarboven te kunnen schrijven ...
@@ -28,7 +28,7 @@ public class LoginView extends GridPane {
 
     private BorderPane root1 = new BorderPane();
 
-     public static Scene scene = new Scene(root, 400, 500);
+     private Scene LoginScene = new Scene(root, 400, 500);
 
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
@@ -101,5 +101,14 @@ public class LoginView extends GridPane {
 
     public Alert getAlert() {
         return alert;
+    }
+
+    public Image getIcon() {
+        return icon;
+    }
+
+
+    public Scene getLoginScene() {
+        return LoginScene;
     }
 }

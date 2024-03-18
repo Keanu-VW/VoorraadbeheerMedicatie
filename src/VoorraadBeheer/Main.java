@@ -7,8 +7,6 @@ import VoorraadBeheer.View.MedicationListView.MedicationListView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-import static VoorraadBeheer.View.LoginView.LoginView.icon;
-import static VoorraadBeheer.View.LoginView.LoginView.scene;
 
 public class Main extends Application {
 
@@ -16,7 +14,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
 
         LoginView loginView = new LoginView();
-        LoginPresentor loginPresentor=new LoginPresentor(loginView);
+        new LoginPresentor(loginView);
         MedicationListView medicationListView = new MedicationListView();
         new MedicationListPresentor(medicationListView);
 
@@ -26,8 +24,8 @@ public class Main extends Application {
 
         // Icon toevoegen
 
-        primaryStage.getIcons().add(icon);
-        primaryStage.setScene(scene);
+        primaryStage.getIcons().add(loginView.getIcon());
+        primaryStage.setScene(loginView.getLoginScene());
 
 
         primaryStage.show();

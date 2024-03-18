@@ -14,7 +14,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
 
         LoginView loginView = new LoginView();
-        new LoginPresentor(loginView);
+      LoginPresentor presentor=  new LoginPresentor(loginView);
         MedicationListView medicationListView = new MedicationListView();
         new MedicationListPresentor(medicationListView);
 
@@ -23,11 +23,9 @@ public class Main extends Application {
         primaryStage.setTitle("Medicatie beheer");
 
         // Icon toevoegen
-
+        presentor.addWindowEventHandlers();
         primaryStage.getIcons().add(loginView.getIcon());
         primaryStage.setScene(loginView.getLoginScene());
-
-
         primaryStage.show();
     }
 

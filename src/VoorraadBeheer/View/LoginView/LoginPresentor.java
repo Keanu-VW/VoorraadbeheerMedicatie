@@ -3,10 +3,12 @@ package VoorraadBeheer.View.LoginView;
 import VoorraadBeheer.View.MedicationListView.MedicationListPresentor;
 import VoorraadBeheer.View.MedicationListView.MedicationListView;
 
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
-
+import javafx.stage.WindowEvent;
 
 
 public class LoginPresentor {
@@ -48,17 +50,35 @@ public class LoginPresentor {
 
 
            else{
-               Alert alert = new Alert(Alert.AlertType.ERROR);
+           Alert alert = new Alert(Alert.AlertType.ERROR);
            alert.setTitle("Fout");
-           alert.setHeaderText(null);
            alert.setContentText("Ongeldige gebruikersnaam");
            alert.showAndWait();
        }
        });
 
     }
-
-    private void updateView() {
+    public  void addWindowEventHandlers() {
+        view.getScene().getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setHeaderText("Hieronder stopt het programma");
+                alert.setContentText("ben je zeker ?");
+                alert.setTitle("opgelet");
+                alert.getButtonTypes().clear();
+                ButtonType neen = new ButtonType("Neen");
+                ButtonType ja = new ButtonType("ja");
+                alert.getButtonTypes().addAll(neen, ja);
+                alert.showAndWait();
+                if (alert.getResult() == null || alert.getResult().equals("neen")) {
+                    event.consume();
+                }
+            }
+        });
 
     }
-}
+        private void updateView () {
+
+        }
+    }

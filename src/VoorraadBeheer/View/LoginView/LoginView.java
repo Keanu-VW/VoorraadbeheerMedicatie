@@ -30,7 +30,7 @@ public class LoginView extends GridPane {
 
      private Scene LoginScene = new Scene(stackPaneRoot, 400, 500);
 
-    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+     Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
 
 
@@ -49,8 +49,7 @@ public class LoginView extends GridPane {
         borderPaneRoot.setTop(loginText);
         stackPaneRoot.getChildren().add(borderPaneRoot);
         stackPaneRoot.getChildren().add(backgroundImageView);
-
-        //this, root1 borderPane
+        //this, gidPane
         this.setAlignment(Pos.TOP_LEFT);
         //Gebruik Hgap en Vgap om de
         //ruimte tussen de cellen in te stellen
@@ -68,7 +67,7 @@ public class LoginView extends GridPane {
         // Voeg de GridPane toe aan de StackPane
         stackPaneRoot.getChildren().add(this);
 
-        // Stel de titel en de inhoud van de alert in
+        // Stel de titel en de inhoud van de alert in voor de knop niuewe gebruiker
         alert.setTitle("Nieuwe gebruiker");
         //Door null in te stellen, verwijder je de standaard kopregel die bij bepaalde Alert-typen wordt weergegeven.
         alert.setHeaderText(null);

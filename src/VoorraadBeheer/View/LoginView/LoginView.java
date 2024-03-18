@@ -24,11 +24,11 @@ public class LoginView extends GridPane {
     //gebruiken zonder OP
 
     // voor de achter grond foto en om daarboven te kunnen schrijven ...
-    public static StackPane root = new StackPane();
+    public static StackPane stackPaneRoot = new StackPane();
 
-    private BorderPane root1 = new BorderPane();
+    private BorderPane borderPaneRoot = new BorderPane();
 
-     private Scene LoginScene = new Scene(root, 400, 500);
+     private Scene LoginScene = new Scene(stackPaneRoot, 400, 500);
 
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
@@ -46,11 +46,9 @@ public class LoginView extends GridPane {
     private void layoutNodes(){
         loginText.setFont(Font.font("Verdana", 30));
         loginText.setFill(Color.LIGHTSALMON);
-        root1.setTop(loginText);
-
-        root1.setTop(loginText);
-        root.getChildren().add(root1);
-        root.getChildren().add(backgroundImageView);
+        borderPaneRoot.setTop(loginText);
+        stackPaneRoot.getChildren().add(borderPaneRoot);
+        stackPaneRoot.getChildren().add(backgroundImageView);
 
         //this, root1 borderPane
         this.setAlignment(Pos.TOP_LEFT);
@@ -68,7 +66,7 @@ public class LoginView extends GridPane {
         this.add(registerButton, 1, 2);
 
         // Voeg de GridPane toe aan de StackPane
-        root.getChildren().add(this);
+        stackPaneRoot.getChildren().add(this);
 
         // Stel de titel en de inhoud van de alert in
         alert.setTitle("Nieuwe gebruiker");

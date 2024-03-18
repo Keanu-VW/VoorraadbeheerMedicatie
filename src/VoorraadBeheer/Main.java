@@ -23,9 +23,9 @@ public class Main extends Application {
         primaryStage.setTitle("Medicatie beheer");
 
         // Icon toevoegen
-        presentor.addWindowEventHandlers();
         primaryStage.getIcons().add(loginView.getIcon());
         primaryStage.setScene(loginView.getLoginScene());
+        presentor.addWindowEventHandlers();
         primaryStage.show();
     }
 

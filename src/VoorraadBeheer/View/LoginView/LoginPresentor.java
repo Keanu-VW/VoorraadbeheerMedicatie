@@ -58,8 +58,8 @@ public class LoginPresentor {
        });
 
     }
-    public  void addWindowEventHandlers(Stage EenStage) {
-            EenStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+    public  void addWindowEventHandlers(Stage eenStage) {
+            eenStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent event) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);

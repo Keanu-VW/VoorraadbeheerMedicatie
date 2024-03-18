@@ -25,7 +25,7 @@ public class Main extends Application {
         // Icon toevoegen
         primaryStage.getIcons().add(loginView.getIcon());
         primaryStage.setScene(loginView.getLoginScene());
-        presentor.addWindowEventHandlers();
+        presentor.addWindowEventHandlers(primaryStage);
         primaryStage.show();
     }
 

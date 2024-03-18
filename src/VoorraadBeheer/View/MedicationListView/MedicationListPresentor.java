@@ -1,6 +1,11 @@
 package VoorraadBeheer.View.MedicationListView;
 
 
+import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.stage.WindowEvent;
+
 public class MedicationListPresentor {
     private MedicationListView medicationListView;
     public MedicationListPresentor(MedicationListView medicationListView) {
@@ -17,4 +22,5 @@ public class MedicationListPresentor {
     private void updateView() {
 
     }
+
 }

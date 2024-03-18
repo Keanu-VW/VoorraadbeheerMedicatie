@@ -12,7 +12,6 @@ import javafx.stage.WindowEvent;
 
 
 public class LoginPresentor {
-    private MedicationListView view1;
     private final LoginView view;
 
     public LoginPresentor(LoginView view) {
@@ -38,13 +37,14 @@ public class LoginPresentor {
                Stage medicationListStage = new Stage();
                Scene medicationListScene = new Scene(medicationListView, 1000, 600);
                medicationListStage.setScene(medicationListScene);
-
+               addWindowEventHandlers(medicationListStage);
                // show the new stage
                 medicationListStage.show();
 
                 // Close the login stage
                 Stage loginStage = (Stage) view.getScene().getWindow();
                 loginStage.close();
+
 
            }
 
@@ -58,8 +58,8 @@ public class LoginPresentor {
        });
 
     }
-    public  void addWindowEventHandlers() {
-        view.getScene().getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {
+    public  void addWindowEventHandlers(Stage EenStage) {
+            EenStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent event) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -67,11 +67,11 @@ public class LoginPresentor {
                 alert.setContentText("ben je zeker ?");
                 alert.setTitle("opgelet");
                 alert.getButtonTypes().clear();
-                ButtonType neen = new ButtonType("Neen");
+                ButtonType nee = new ButtonType("Nee");
                 ButtonType ja = new ButtonType("ja");
-                alert.getButtonTypes().addAll(neen, ja);
+                alert.getButtonTypes().addAll(nee, ja);
                 alert.showAndWait();
-                if (alert.getResult() == null || alert.getResult().equals("neen")) {
+                if (alert.getResult() !=ja ) {
                     event.consume();
                 }
             }

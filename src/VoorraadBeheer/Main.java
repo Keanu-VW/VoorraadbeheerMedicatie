@@ -7,9 +7,6 @@ import VoorraadBeheer.View.MedicationListView.MedicationListView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-import static VoorraadBeheer.View.LoginView.LoginView.icon;
-import static VoorraadBeheer.View.LoginView.LoginView.scene;
-
 public class Main extends Application {
 
     @Override
@@ -24,11 +21,10 @@ public class Main extends Application {
 
         // Icon toevoegen
 
-        primaryStage.getIcons().add(icon);
-        primaryStage.setScene(scene);
-
-
+        primaryStage.getIcons().add(loginView.getIcon());
+        primaryStage.setScene(loginView.getLoginScene());
         primaryStage.show();
+
     }
 
     public static void main(String[] args) {

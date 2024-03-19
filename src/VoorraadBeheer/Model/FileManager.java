@@ -17,7 +17,7 @@ public class FileManager {
         this.filePath = filePath;
         File file = new File(filePath);
 
-        // If the file does not xist, create a new file
+        // If the file does not exist, create a new file
         if (!file.exists()) {
             try {
                 file.createNewFile();
@@ -28,7 +28,27 @@ public class FileManager {
     }
 
     public void saveToFile(TableView<Medication> table) {
+
+        /*
+        From what I understand:
+           - Turn tableview into observable list
+           - Try and catch to write to file
+           - Remove all the content from the file first (Otherwise it would double the content, do this by putting append to false)
+           - First the header (name, description, stock, timeToTake)
+           - Then the data
+         */
+
         ObservableList<Medication> data = table.getItems();
+        try (FileWriter fileWriter = new FileWriter(filePath, false)) {
+            fileWriter.write("name,description,stock,timeToTake\n");
+
+            for (Medication medication : data) {
+                fileWriter.write(medication.getName() + "," + medication.getDescription() + "," + medication.getStock() + "," + medication.getTimeToTake() + "\n");
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 

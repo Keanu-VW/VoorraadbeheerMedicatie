@@ -84,4 +84,16 @@ public class MedicationListView extends BorderPane{
         // Add the root VBox to the MedicationListView
         this.setCenter(root);
     }
+
+    public Button getNewMedicationButton() {
+        return newMedicationButton;
+    }
+
+    public Text getTitle() {
+        return title;
+    }
+
+    public TableView getTableView() {
+        return tableView;
+    }
 }

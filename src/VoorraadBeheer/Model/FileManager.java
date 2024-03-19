@@ -1,11 +1,10 @@
 package VoorraadBeheer.Model;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 
 public class FileManager {
@@ -40,10 +39,10 @@ public class FileManager {
 
         ObservableList<Medication> data = table.getItems();
         try (FileWriter fileWriter = new FileWriter(filePath, false)) {
-            fileWriter.write("name,description,stock,timeToTake\n");
+            fileWriter.write("name,description,stock,timeToTake,category\n");
 
             for (Medication medication : data) {
-                fileWriter.write(medication.getName() + "," + medication.getDescription() + "," + medication.getStock() + "," + medication.getTimeToTake() + "\n");
+                fileWriter.write(medication.getName() + "," + medication.getDescription() + "," + medication.getStock() + "," + medication.getTimeToTake() + "," + medication.getCategory() + "\n");
             }
 
         } catch (IOException e) {
@@ -52,7 +51,25 @@ public class FileManager {
 
     }
 
-    public TableView<Medication> loadFromFile() {
-        return null;
+    public ObservableList<Medication> loadFromFile() {
+        ObservableList<Medication> data = FXCollections.observableArrayList();
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            reader.readLine(); // skip header line
+            while ((line = reader.readLine()) != null) {
+                String[] fields = line.split(",");
+                String name = fields[0];
+                String description = fields[1];
+                int stock = Integer.parseInt(fields[2]);
+                String timeToTake = fields[3];
+                MedicationCat category = MedicationCat.valueOf(fields[4]);
+                Medication medication = new Medication(name, description, stock, timeToTake, category);
+                data.add(medication);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return data;
     }
+
 }

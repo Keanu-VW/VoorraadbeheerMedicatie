@@ -1,12 +1,17 @@
 package VoorraadBeheer.View.NewMedicationView;
 
+import VoorraadBeheer.Model.MedicationCat;
+import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+
+import java.util.Map;
 
 public class NewMedicationView extends BorderPane {
     VBox root = new VBox();
@@ -26,13 +31,17 @@ public class NewMedicationView extends BorderPane {
     HBox buttonBox = new HBox();
     Button saveButton = new Button("Save");
     Button cancelButton = new Button("Cancel");
+    HBox categoryBox = new HBox();
+    Text categoryText = new Text("Category: ");
+    ComboBox<MedicationCat> catagoryField = new ComboBox<>();
+
     public NewMedicationView(){
         initialiseNodes();
         layoutNodes();
     }
 
     private void initialiseNodes(){
-
+        catagoryField.setItems(FXCollections.observableArrayList(MedicationCat.values()));
     }
 
     private void layoutNodes(){
@@ -48,15 +57,17 @@ public class NewMedicationView extends BorderPane {
         stockBox.setSpacing(10);
         timeToTakeBox.setSpacing(10);
         buttonBox.setSpacing(10);
+        categoryBox.setSpacing(10);
 
         // Add all the HBoxes to the root VBox
-        root.getChildren().addAll(nameBox, descriptionBox, stockBox, timeToTakeBox, buttonBox);
+        root.getChildren().addAll(nameBox, descriptionBox, stockBox, timeToTakeBox, categoryBox, buttonBox);
 
         // Add the respective Text and TextField nodes to each HBox
         nameBox.getChildren().addAll(nameText, nameField);
         descriptionBox.getChildren().addAll(descriptionText, descriptionField);
         stockBox.getChildren().addAll(stockText, stockField);
         timeToTakeBox.getChildren().addAll(timeToTakeText, timeToTakeField);
+        categoryBox.getChildren().addAll(categoryText, catagoryField);
         buttonBox.getChildren().addAll(saveButton, cancelButton);
 
         // Set the root VBox as the center of the BorderPane
@@ -85,5 +96,9 @@ public class NewMedicationView extends BorderPane {
 
     public Button getCancelButton() {
         return cancelButton;
+    }
+
+    public ComboBox<MedicationCat> getCategoryField() {
+        return catagoryField;
     }
 }

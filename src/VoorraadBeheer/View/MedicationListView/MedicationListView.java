@@ -1,6 +1,7 @@
 package VoorraadBeheer.View.MedicationListView;
 
 import VoorraadBeheer.Model.Medication;
+import VoorraadBeheer.Model.MedicationCat;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -40,6 +41,7 @@ public class MedicationListView extends BorderPane{
     private TableColumn<Medication, String> descriptionColumn = new TableColumn<>("Description");
     private TableColumn<Medication, Integer> stockColumn = new TableColumn<>("Stock");
     private TableColumn<Medication, LocalTime> timeToTakeColumn = new TableColumn<>("Time to take");
+    private TableColumn<Medication, MedicationCat> categoryColumn = new TableColumn<>("Category");
 
 
     public MedicationListView(){
@@ -52,6 +54,8 @@ public class MedicationListView extends BorderPane{
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         stockColumn.setCellValueFactory(new PropertyValueFactory<>("stock"));
         timeToTakeColumn.setCellValueFactory(new PropertyValueFactory<>("timeToTake"));
+        categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
+
     }
 
     private void layoutNodes(){
@@ -75,10 +79,14 @@ public class MedicationListView extends BorderPane{
         descriptionColumn.setMinWidth(150);
         stockColumn.setMinWidth(150);
         timeToTakeColumn.setMinWidth(150);
+        categoryColumn.setMinWidth(150);
+
+        // Set the spacing for the titleBox
+        titleBox.setSpacing(200);
 
         root.getChildren().addAll(titleBox, tableView, buttonBox);
         titleBox.getChildren().addAll(title, nextMedTimer);
-        tableView.getColumns().addAll(nameColumn, descriptionColumn, stockColumn, timeToTakeColumn);
+        tableView.getColumns().addAll(nameColumn, descriptionColumn, stockColumn, timeToTakeColumn, categoryColumn);
         buttonBox.getChildren().addAll(newMedicationButton, editMedicationButton, deleteMedicationButton);
 
         // Add the root VBox to the MedicationListView

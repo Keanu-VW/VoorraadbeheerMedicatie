@@ -47,6 +47,7 @@ public class MedicationListPresentor {
 
         // Filemanager > Get data from file > Get tableview > Send data to tableview (ToDo)
         FileManager fileManager = new FileManager(userName + ".csv");
+        medicationListView.getTableView().setItems(fileManager.loadFromFile());
 
 
     }

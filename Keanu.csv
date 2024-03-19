@@ -1,4 +1,3 @@
-name,description,stock,timeToTake
-Efexor Excel,/,35,13:00
-Concerta,/,0,10:00
-Serlain,/,25,10:00
+name,description,stock,timeToTake,category
+TEst,Test,15,Now,ONTSTEKING
+Test2,Test2,15,Now,BLOEDDRUK

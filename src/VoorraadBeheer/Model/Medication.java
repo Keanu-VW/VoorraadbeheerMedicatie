@@ -7,12 +7,14 @@ public class Medication {
     private String description;
     private int stock;
     private String timeToTake;
+    private MedicationCat category;
 
-    public Medication(String name, String description, int stock, String timeToTake) {
+    public Medication(String name, String description, int stock, String timeToTake, MedicationCat category) {
         this.name = name;
         this.description = description;
         this.stock = stock;
         this.timeToTake = timeToTake;
+        this.category = category;
     }
 
     public String getName() {
@@ -29,5 +31,9 @@ public class Medication {
 
     public String getTimeToTake() {
         return timeToTake;
+    }
+
+    public MedicationCat getCategory() {
+        return category;
     }
 }

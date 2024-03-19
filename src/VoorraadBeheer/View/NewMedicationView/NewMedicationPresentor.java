@@ -23,7 +23,7 @@ public class NewMedicationPresentor {
                     newMedicationView.getNameField().getText(),
                     newMedicationView.getDescriptionField().getText(),
                     Integer.parseInt(newMedicationView.getStockField().getText()),
-                    newMedicationView.getTimeToTakeField().getText());
+                    newMedicationView.getTimeToTakeField().getText(), newMedicationView.getCategoryField().getValue());
 
             // Save the new medication to the tableview
             tableview.getItems().add(newMedication);

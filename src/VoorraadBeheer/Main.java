@@ -23,6 +23,7 @@ public class Main extends Application {
 
         primaryStage.getIcons().add(loginView.getIcon());
         primaryStage.setScene(loginView.getLoginScene());
+        loginPresentor.addWindowEventHandlers(primaryStage);
         primaryStage.show();
 
     }

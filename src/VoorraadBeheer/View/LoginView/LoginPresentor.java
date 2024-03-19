@@ -3,10 +3,12 @@ package VoorraadBeheer.View.LoginView;
 import VoorraadBeheer.View.MedicationListView.MedicationListPresentor;
 import VoorraadBeheer.View.MedicationListView.MedicationListView;
 
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
-
+import javafx.stage.WindowEvent;
 
 
 public class LoginPresentor {
@@ -62,5 +64,24 @@ public class LoginPresentor {
 
     private void updateView() {
 
+    }
+    public void addWindowEventHandlers(Stage eenStage) {
+        eenStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setHeaderText("Hieronder stopt het programma");
+                alert.setContentText("ben je zeker ?");
+                alert.setTitle("opgelet");
+                alert.getButtonTypes().clear();
+                ButtonType neen = new ButtonType("Neen");
+                ButtonType ja = new ButtonType("ja");
+                alert.getButtonTypes().addAll(neen, ja);
+                alert.showAndWait();
+                if (alert.getResult() != ja ) {
+                    event.consume();
+                }
+            }
+        });
     }
 }

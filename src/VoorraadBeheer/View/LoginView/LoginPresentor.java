@@ -13,7 +13,7 @@ import javafx.stage.WindowEvent;
 
 public class LoginPresentor {
     private MedicationListView view1;
-    private final LoginView view;
+    private LoginView view;
 
     public LoginPresentor(LoginView view) {
         this.view = view;
@@ -39,6 +39,7 @@ public class LoginPresentor {
                Scene medicationListScene = new Scene(medicationListView, 1000, 600);
                medicationListStage.setScene(medicationListScene);
 
+               // public MedicationListPresentor(MedicationListView medicationListView, String userName)
                new MedicationListPresentor(medicationListView, view.getUserNameField().getText());
                addWindowEventHandlers(medicationListStage);
                // show the new stage
@@ -54,6 +55,7 @@ public class LoginPresentor {
            else{
                Alert alert = new Alert(Alert.AlertType.ERROR);
            alert.setTitle("Fout");
+           //wordt gebruikt om de titel van het hoofdtekstgebied van het alertvenster in te stellen op null
            alert.setHeaderText(null);
            alert.setContentText("Ongeldige gebruikersnaam");
            alert.showAndWait();

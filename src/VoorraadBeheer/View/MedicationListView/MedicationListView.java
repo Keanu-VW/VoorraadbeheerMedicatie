@@ -50,6 +50,7 @@ public class MedicationListView extends BorderPane{
     }
 
     private void initialiseNodes(){
+        //Door deze instellingen zal de TableView automatisch de juiste waarden weergeven in de cellen van elke kolom, gebaseerd op de attributen van het Medication-object dat wordt weergegeven.
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         stockColumn.setCellValueFactory(new PropertyValueFactory<>("stock"));
@@ -67,8 +68,7 @@ public class MedicationListView extends BorderPane{
 
         // Set spacing between the buttons in the buttonBox
         buttonBox.setSpacing(10);
-
-        // Set the alignment of the buttonBox to center
+         // Set the alignment of the buttonBox to center
         buttonBox.setAlignment(Pos.CENTER);
 
         // Set the minimum width for the TableView
@@ -84,10 +84,10 @@ public class MedicationListView extends BorderPane{
         // Set the spacing for the titleBox
         titleBox.setSpacing(200);
 
-        root.getChildren().addAll(titleBox, tableView, buttonBox);
+        buttonBox.getChildren().addAll(newMedicationButton, editMedicationButton, deleteMedicationButton);
         titleBox.getChildren().addAll(title, nextMedTimer);
         tableView.getColumns().addAll(nameColumn, descriptionColumn, stockColumn, timeToTakeColumn, categoryColumn);
-        buttonBox.getChildren().addAll(newMedicationButton, editMedicationButton, deleteMedicationButton);
+        root.getChildren().addAll(titleBox, tableView, buttonBox);
 
         // Add the root VBox to the MedicationListView
         this.setCenter(root);

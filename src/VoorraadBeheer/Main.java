@@ -2,8 +2,6 @@ package VoorraadBeheer;
 
 import VoorraadBeheer.View.LoginView.LoginPresentor;
 import VoorraadBeheer.View.LoginView.LoginView;
-import VoorraadBeheer.View.MedicationListView.MedicationListPresentor;
-import VoorraadBeheer.View.MedicationListView.MedicationListView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

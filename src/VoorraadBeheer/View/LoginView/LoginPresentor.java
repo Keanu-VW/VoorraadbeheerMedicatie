@@ -40,7 +40,7 @@ public class LoginPresentor {
                medicationListStage.setScene(medicationListScene);
 
                new MedicationListPresentor(medicationListView, view.getUserNameField().getText());
-
+               addWindowEventHandlers(medicationListStage);
                // show the new stage
                 medicationListStage.show();
 

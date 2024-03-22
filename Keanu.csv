@@ -1,3 +1,8 @@
 name,description,stock,timeToTake,category
-TEst,Test,15,Now,ONTSTEKING
-Test2,Test2,15,Now,BLOEDDRUK
+Medicijn X,Doet iets,35,17:00,ANDERS
+Medicijn Y,Test,123,15:00,ANDERS
+Medicijn B,1 keer per dag,30,20:00,CHOLESTEROL
+Medicijn E,Elke 3 dagen,20,14:00,DIABETES
+Medicijn A,2 keer per dag,50,08:00,DIABETES
+Efexor Excel,150mg per dag,120,19:00,BLOEDDRUK
+Serlain,50mg per dag,25,13:00,ANDERS

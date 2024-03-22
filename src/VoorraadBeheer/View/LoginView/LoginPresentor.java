@@ -20,7 +20,6 @@ public class LoginPresentor {
     }
 
     private void addEventHandlers() {
-                                           //lambda-uitdrukking
        view.getRegisterButton().setOnAction(e -> {
            // Toon de alert
            view.getAlert().showAndWait();

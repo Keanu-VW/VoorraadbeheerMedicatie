@@ -2,6 +2,8 @@ package VoorraadBeheer.View.MedicationListView;
 
 
 import VoorraadBeheer.Model.FileManager;
+import VoorraadBeheer.View.EditMedicationView.EditMedicationPresentor;
+import VoorraadBeheer.View.EditMedicationView.EditMedicationView;
 import VoorraadBeheer.View.NewMedicationView.NewMedicationPresentor;
 import VoorraadBeheer.View.NewMedicationView.NewMedicationView;
 import javafx.scene.Scene;
@@ -33,6 +35,27 @@ public class MedicationListPresentor {
 
             // show the new stage
             newMedicationStage.show();
+        });
+
+        // Event handler for the edit medication button
+        this.medicationListView.getEditMedicationButton().setOnAction(e -> {
+
+            // Create a new editMedicationView and presentor
+            EditMedicationView editMedicationView = new EditMedicationView();
+            new EditMedicationPresentor(editMedicationView, medicationListView.getTableView());
+
+            // Create a new stage and scene for the editMedicationView
+            Stage editMedicationStage = new Stage();
+            Scene editMedicationScene = new Scene(editMedicationView, 400, 240);
+            editMedicationStage.setScene(editMedicationScene);
+
+            // Show the new stage
+            editMedicationStage.show();
+        });
+
+        // Event handler for the delete medication button
+        this.medicationListView.getDeleteMedicationButton().setOnAction(e -> {
+            medicationListView.getTableView().getItems().remove(medicationListView.getTableView().getSelectionModel().getSelectedItem());
         });
 
         // Event handler for closing the window (Saves to file with the file manager class)

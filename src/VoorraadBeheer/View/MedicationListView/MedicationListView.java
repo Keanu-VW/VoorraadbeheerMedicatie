@@ -5,6 +5,7 @@ import VoorraadBeheer.Model.MedicationCat;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBase;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
@@ -96,6 +97,9 @@ public class MedicationListView extends BorderPane{
     public Button getNewMedicationButton() {
         return newMedicationButton;
     }
+    public Button getEditMedicationButton() {
+        return editMedicationButton;
+    }
 
     public Text getTitle() {
         return title;
@@ -104,4 +108,9 @@ public class MedicationListView extends BorderPane{
     public TableView getTableView() {
         return tableView;
     }
+
+    public Button getDeleteMedicationButton() {
+        return deleteMedicationButton;
+    }
+
 }

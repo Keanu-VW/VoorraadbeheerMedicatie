@@ -1,7 +1,5 @@
 package VoorraadBeheer.Model;
 
-import java.time.LocalTime;
-
 public class Medication {
     private String name;
     private String description;
